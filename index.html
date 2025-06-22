@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cristal Star - تسجيل الدخول</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <div class="login-box">
+    <h1>تسجيل الدخول</h1>
+    <input type="password" id="passwordInput" placeholder="أدخل الرمز السري" />
+    <button onclick="checkPassword()">دخول</button>
+    <p class="error-msg" id="errorMsg">الرمز خاطئ، حاول مرة أخرى.</p>
+  </div>
+
+<script>
+  function checkPassword() {
+    const password = document.getElementById('passwordInput').value;
+    const correctPassword = 'dfg'; // رمز الدخول
+
+    if(password === correctPassword) {
+      alert('تم تسجيل الدخول بنجاح!');
+      // هنا يمكن إضافة توجيه لصفحة التطبيق أو إظهار محتوى
+    } else {
+      document.getElementById('errorMsg').style.display = 'block';
+    }
+  }
+</script>
+</body>
+</html>

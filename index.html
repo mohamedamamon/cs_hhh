@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cristal Star - تسجيل الدخول</title>
-<link rel="stylesheet" href="style.css" />
-<link rel="manifest" href="manifest.json" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cristal Star - تسجيل الدخول</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e293b;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background: #334155;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #0f172a;
+      width: 300px;
+      text-align: center;
+    }
+    .login-box h1 {
+      margin-bottom: 20px;
+    }
+.login-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background: #0ea5e9;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      color: white;
+ cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .login-box button:hover {
+      background: #0284c7;
+    }
+    .error-msg {
+      color: #f87171;
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="login-box">
@@ -15,18 +65,21 @@
     <p class="error-msg" id="errorMsg">الرمز خاطئ، حاول مرة أخرى.</p>
   </div>
 
-<script>
-  function checkPassword() {
-    const password = document.getElementById('passwordInput').value;
-    const correctPassword = 'dfg'; // رمز الدخول
+  <script>
+    function checkPassword() {
+const password = document.getElementById('passwordInput').value.trim();
+      const correctPassword = 'dfg'; // رمز الدخول
 
-    if(password === correctPassword) {
-      alert('تم تسجيل الدخول بنجاح!');
-      // هنا يمكن إضافة توجيه لصفحة التطبيق أو إظهار محتوى
-    } else {
-      document.getElementById('errorMsg').style.display = 'block';
+      if (password === correctPassword) {
+        alert('تم تسجيل الدخول بنجاح!');
+        window.location.href = "main.html"; // الانتقال إلى صفحة التطبيق
+      } else {
+        document.getElementById('errorMsg').style.display = 'block';
+      }
     }
-  }
-</script>
+  </script>
 </body>
 </html>
+   
+    
+      
